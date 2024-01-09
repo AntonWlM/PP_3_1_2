@@ -12,16 +12,15 @@ import java.util.List;
 @Repository
 public class UserDAOImp implements UserDAO {
 
-
     private final EntityManager entityManager;
-
+    //todo: codeStyle - пустые строки
 
     @Autowired
     public UserDAOImp(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
-    public List<User> list() {
+    public List<User> list() {//todo: codeStyle -> getUsers
         return entityManager.createQuery("from User", User.class).getResultList();
     }
 

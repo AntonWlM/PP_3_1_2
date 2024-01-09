@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class UserServiceImp implements UserService {
 
-    private final UserDAO userDAO;
+    private final UserDAO userDAO;//todo: пишем в camelCase: userDao
 
     @Autowired
     public UserServiceImp(UserDAO userDAO) {
@@ -31,6 +31,7 @@ public class UserServiceImp implements UserService {
     public void save(User user) {
         userDAO.save(user);
     }
+
     @Transactional
     public void update(User user) {
         userDAO.update(user);

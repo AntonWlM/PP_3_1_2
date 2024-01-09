@@ -36,15 +36,14 @@ public class UserController {
     }
 
     @GetMapping("/edit")
-    public String editUser(@RequestParam(value = "id") int id,
-                           Model model) {
+    public String editUser(@RequestParam(value = "id") int id, Model model) {//todo: int id - не актуальная вещь, пора использовать по всему коду ссылочные типы -> Integer, например
         model.addAttribute("user", userService.find(id));
         return "edit";
     }
 
     @PostMapping("/update")
     public String updateUser(@ModelAttribute("user") User user,
-                             @RequestParam("id") int id) {
+                             @RequestParam("id") int id) {//todo: id - используется??
         userService.update(user);
         return "redirect:/";
     }
